@@ -19,9 +19,9 @@ class AwsCodepipelineStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         commit_input = pipelines.CodePipelineSource.connection(
-            repo_string = "https://gitlab.com/vedantdave77/aws-cdk-pipeline.git",
+            repo_string = "https://github.com/vedantdave77/aws-codepipeline.git",
             branch = "main",
-            connection_arn = "",
+            connection_arn = "arn:aws:codestar-connections:us-east-1:398081196462:connection/4adcd83a-f671-416b-b60f-e87a0fbae1a2",
         )
 
         code_pipeline = codepipeline.Pipeline(
