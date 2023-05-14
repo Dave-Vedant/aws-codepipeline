@@ -25,7 +25,7 @@ class AwsCodepipelineStack(Stack):
         )
 
         code_pipeline = codepipeline.Pipeline(
-            self, "Pipeline1",
+            self, "Pipeline",
             pipeline_name = "cdk-pipeline",
             cross_account_keys=False,
         )
