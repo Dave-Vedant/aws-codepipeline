@@ -8,10 +8,6 @@ from aws_cdk import (
 from constructs import Construct
 from resource_stack.resource_stack import ResourceStack
 
-class DeployStage(Stage):
-    def __init__(self, scope: Construct, id:str, **kwargs):
-        super().__init__(scope, id, **kwargs)
-        ResourceStack(self, 'ResourceStack', stack_name="resource-stack-deploy")
 
 class AwsCodepipelineStack(Stack):
 
@@ -54,3 +50,8 @@ class AwsCodepipelineStack(Stack):
             self, "DeployStage",
         ))
 
+
+class DeployStage(Stage):
+    def __init__(self, scope: Construct, id:str, **kwargs):
+        super().__init__(scope, id, **kwargs)
+        ResourceStack(self, 'ResourceStack', stack_name="resource-stack-deploy")
